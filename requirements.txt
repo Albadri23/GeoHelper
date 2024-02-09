@@ -2,7 +2,6 @@ Flask
 Gunicorn
 folium
 werkzeug
-sys
 os
 os.path
 folium.plugins
