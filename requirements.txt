@@ -2,8 +2,6 @@ Flask
 Gunicorn
 folium
 werkzeug
-os
-os.path
 folium.plugins
 pandas
 datetime
