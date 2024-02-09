@@ -1,7 +1,7 @@
 Flask
 Gunicorn
 folium
-werkzeug.utils
+werkzeug
 sys
 os
 os.path
