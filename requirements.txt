@@ -1,3 +1,14 @@
 Flask
 Gunicorn
 folium
+itertools
+werkzeug.utils
+sys
+os
+os.path
+folium.plugins
+pandas
+datetime
+geodepy.constants
+geodepy.transform
+matplotlib
