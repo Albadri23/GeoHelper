@@ -2,9 +2,7 @@ Flask
 Gunicorn
 folium
 werkzeug
-folium.plugins
 pandas
 datetime
-geodepy.constants
-geodepy.transform
+geodepy
 matplotlib
