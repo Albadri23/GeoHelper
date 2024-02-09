@@ -1,6 +1,5 @@
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 import folium
-import itertools
 from werkzeug.utils import secure_filename
 import sys
 import os
