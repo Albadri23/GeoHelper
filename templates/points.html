@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<form action="/maps" method="post" class="fdy">
+    <div class="text-d">
+        <h3>Points map:</h3>
+        <p>Draw markers on the plain map, and make sure to input region coordinates alongside marker coordinates.</p>
+    </div>
+<div class="dy" >
+    <div class="wrap">
+        <h2>Add coordinates</h2>
+        <a class="add" href="#">&plus;</a>
+    </div>
+    <div class="in-g">
+
+    </div>
+    <button type="submit">Submit</button>
+</div>
+
+</form>
+<div class="back">
+    <a href="{{ url_for('mapmain')}}">
+    <button >Return</button>
+    </a>
+    </div>
+<script  src="/static/dynamic.js"> </script>
+
+
+
+{% endblock %}

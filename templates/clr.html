@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-c">
+    <h3>Map output</h3>
+</div>
+<div class="map1">
+<iframe class="fcls", src="/fcls" width="600" height="600"></iframe>
+</div>
+
+<div class="fol">
+    <h3>Powered by <a href="https://python-visualization.github.io/folium/latest/">Folium</a></h3>
+</div>
+
+<div class="back">
+    <a href="{{ url_for('cluster')}}">
+    <button >Return</button>
+    </a>
+    </div>
+
+
+
+
+{% endblock %}

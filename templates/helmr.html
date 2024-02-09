@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Your result:</h3>
+    <p>&nbsp;X: {{xv}}<br>&nbsp;Y: {{yv}}<br>&nbsp;Z: {{zv}}<br></p>
+    <div class="back">
+            <a href="{{ url_for('helm')}}">
+            <button >Return</button>
+            </a>
+            </div>
+            </div>
+            <div class="fol">
+                <h3>Powered by <a href="https://github.com/GeoscienceAustralia/GeodePy">GeodePy</a></h3>
+            </div>
+
+
+{% endblock %}

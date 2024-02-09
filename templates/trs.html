@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Coordinate transformation</h3>
+    <p>Here you can perform coordinate transformation between UTM to both cartesian coordinates and geographic coordinate system, the user must input UTM parameters with ellipsoidal height and then press submit                                                           </p>
+</div>
+
+<form  action="/trs" class="level" method="post">
+    <table>
+        <tr>
+            <td>Parameter</td>
+            <td>Value</td>
+        </tr>
+        <tr>
+            <td>Zone</td>
+            <td><input name="zone" autocomplete="off" type="float" ></td>
+        </tr>
+        <tr>
+            <td>East</td>
+            <td><input name="east" autocomplete="off" type="float" ></td>
+        </tr>
+        <tr>
+            <td>North</td>
+            <td><input name="north" autocomplete="off" type="float" ></td>
+        </tr>
+        <tr>
+            <td>Ellipsoidal height</td>
+            <td><input name="h" autocomplete="off" type="float" ></td>
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+</form>
+
+
+<div class="back">
+    <a href="{{ url_for('coord')}}">
+    <button >Return</button>
+    </a>
+    </div>
+
+{% endblock %}

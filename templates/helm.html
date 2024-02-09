@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+
+<div class="text-d">
+    <h3>Helmert transformation:</h3>
+    <p>Aimed to produce distortion-free transformation between one datum to the other. The user must input the cartesian coordinates of the current datum then select from the drop-down menu the (from datum _ to datum) option and press submit </p>
+</div>
+
+<form  action="/helm" class="level" method="post">
+    <table>
+        <tr>
+            <td>Parameter</td>
+            <td>Value</td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td><input name="x" autocomplete="off" type="float" ></td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td><input name="y" autocomplete="off" type="float" ></td>
+        </tr>
+        <tr>
+            <td>Z</td>
+            <td><input name="z" autocomplete="off" type="float" ></td>
+        </tr>
+    </table>
+
+    <div class="custom-select" style="width:400px;">
+        <select name="val" >
+          <option value="0" disabled>Select datum:</option>
+          <option value="agd66_to_gda94">agd66_to_gda94</option>
+          <option value="itrf2014_to_itrf2005">itrf2014_to_itrf2005</option>
+          </select>
+          </div>
+    <button type="submit">Submit</button>
+</form>
+
+
+<div class="back">
+    <a href="{{ url_for('coord')}}">
+    <button >Return</button>
+    </a>
+    </div>
+
+{% endblock %}

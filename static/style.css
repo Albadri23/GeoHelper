@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad&display=swap');
+/* nav bar have been inspired from : https://youtu.be/PwWHL3RyQgk?feature=shared */
+* {
+    box-sizing : border-box;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+html{
+    font-family: "Afacad";
+    font-size: 18px;
+    background-color: #24252A !important
+}
+
+li, a, button{
+    font-family: "Afacad", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
+    padding: 20px 10%;
+
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+    color: #0088a9
+}
+
+button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.hero img{
+    max-width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+}
+
+
+.hero div.hero-text{
+    position: absolute;
+    justify-content: center;
+    top: 15%;
+    color: rgb(240, 240, 240);
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: inset 0 0 0 100vmax rgba(0,0,0,.3);
+    text-align: center;
+}
+
+.hero div.hero-text{
+    font-size:26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+
+/* card design inspired from https://youtu.be/9FNNkzPBFcE?feature=shared */
+
+.card-cont{
+    postion: absolute;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.card{
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    background-color:  #edf7f6;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card img{
+    width: 300px;
+    height: 180px;
+    opacity: 1;
+
+}
+
+.card-cont{
+
+   padding: 1px;
+}
+
+.card-cont h3{
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: black;
+  text-align: center;
+}
+
+
+.card-cont p{
+    font-size: 13px;
+    line-height: 1.3;
+    color: black;
+    text-align: center;
+}
+
+.card-cont .btn{
+    text-align: center;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+    background-color: rgba(3,29,45,1.00);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 10px;
+}
+
+
+.card-cont .btn:hover{
+    background-color: rgba(3,29,45,0.8);
+
+}
+
+/* footer design inspired by https://youtu.be/YOb67OKw62s?feature=shared */
+
+.footer{
+    background-color: #24262b;
+    padding: 25px 10%;
+}
+
+.footer ul{
+    list-style: none;
+
+}
+
+
+.ct{
+    max-width: 1170px;
+    margin: auto;
+
+}
+
+.ct .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.f-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.f-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+
+}
+
+.f-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+
+}
+
+.f-col ul li:not(:last-child){
+    margin-bottom: 10px;
+
+}
+
+.f-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+
+}
+
+.f-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.f-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 15px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+
+}
+
+.f-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+ @media(max-width: 767px){
+    *{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media(max-width: 574px){
+    *{
+        width: 100%;
+    }
+}
+
+
+.here {
+    font-size:26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+
+}
+
+
+
+.text-c{
+    text-align: center;
+    margin: auto;
+    width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color:  #edf7f6;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+
+}
+
+
+.btn1{
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+    background-color: rgba(3,29,45,1.00);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 10px;
+    margin-left: 37px;
+
+
+}
+
+.btn1:hover{
+    background-color: rgba(3,29,45,0.8);
+
+}
+
+.text-d{
+    text-align: left;
+    margin: auto;
+    width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color:  #edf7f6;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+
+}
+
+.text-d h3{
+    text-align:left;
+    color : red;
+
+}
+
+
+
+/* dynamic input inspired from : https://youtu.be/p0yrMA2VHg0?feature=shared */
+.dy{
+    max-width: 600px;
+    background: #edf7f6;
+    border-radius: 5px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    margin: auto;
+
+
+}
+
+.fdy{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.dy button{
+    justify-content: center;
+    align-items: center;
+
+}
+
+ .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+
+}
+
+.add{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #edf7f6;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.flex{
+
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 5px;
+}
+
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: #edf7f6;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+input{
+    padding: 5px 10px;
+    background: white;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+
+}
+
+.in-g{
+    margin-bottom: 10px;
+}
+
+.map1{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+  .back{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+  }
+
+  .back button{
+    background-color: red;
+    color: white;
+  }
+
+  .back button:hover{
+    background-color: white;
+    color: black;
+  }
+
+  .fol{
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color:  #edf7f6;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+    font-size: 12px;
+
+  }
+
+  .fol a{
+    color: green;
+    font-size: 12px;
+
+  }
+
+
+
+/* table css from https://gist.github.com/iftee/9cdb93ce555275f937e4 */
+
+  table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: #edf7f6; /* Change the background-color of table here */
+    text-align: left; /* Change the text-alignment of table here */
+    justify-content: center;
+  }
+
+  th {
+    font-weight: bold;
+    border: 1px solid #cccccc; /* Change the border-color of heading here */
+    padding: 8px;
+  }
+
+  td {
+    border: 1px solid black; /* Change the border-color of cells here */
+    padding: 10px;
+  }
+
+  .level button{
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    display: flex;
+
+  }
+
+select{
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    height: 30px;
+
+}
+  /* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .text-d a{
+    color: blue;
+  }

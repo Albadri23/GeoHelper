@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+
+<div class="text-c">
+    <h3>Work with coordinates</h3>
+<p>Coordinates are ordered pairs of points that help us locate any point in a 2D plane or 3D space, GeoHelper provides users with several helpful functions that can be browsed below</p>
+</div>
+
+
+<div class="card-cont">
+    <div class="card">
+    <div class="card-content">
+        <h3> Helmert transformation</h3>
+        <p>Named after Friedrich Robert Helmert, a 3-dimensional transformation method that aimed to produce distortion-free transformation between datums</p>
+        <a class="btn1" href="{{ url_for('helm')}}">Learn more</a>
+    </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <h3>Coordinate transformation: UTM</h3>
+            <p>By using the Geodepy library users can apply  UTM to coordinate  and UTM to   cartesian   transformation by providing UTM parameters </p>
+            <a class="btn1" href="{{ url_for('trs')}}">Learn more</a>
+        </div>
+        </div>
+
+</div>
+
+
+
+
+{% endblock %}

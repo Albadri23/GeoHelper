@@ -1,0 +1,172 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Traverse sheet:</h3>
+    <p>This table represents a Traverse sheet for the case of 2 reference points with 2 unknown points to be surveyed, the user must input highlighted fields of distances(m), directions(degree), and RF point coordinates, and the expected output would be coordinates of unknown points corrected by Bowditch's rule  </p>
+</div>
+
+<!-- this website has been used to create table elements https://tableconvert.com/html-to-html -->
+<form class="level" onsubmit="return false;">
+    <table>
+        <tr>
+            <td>Point</td>
+            <td>Direction</td>
+            <td>Distance</td>
+            <td>&#8710;Y</td>
+            <td>&#8710;X</td>
+            <td>Coordinate X</td>
+            <td>Coordinate Y</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td><input placeholder="A - 1" autocomplete="off" id="in11"></td>
+            <td><input placeholder="A - 1" autocomplete="off" id="dis1"></td>
+            <td><div id="ou11"></div></td>
+            <td><div id="ou12"></div></td>
+            <td><input placeholder="A" autocomplete="off" id="in13"></td>
+            <td><input placeholder="A" autocomplete="off" id="in14"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input placeholder="1 - 2" autocomplete="off" id="in21"></td>
+            <td><input placeholder="1 - 2" autocomplete="off" id="dis2"></td>
+            <td><div id="ou21"></div></td>
+            <td><div id="ou22"></div></td>
+            <td><div id="ou23"></div></td>
+            <td><div id="ou24"></div></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input placeholder="2 - End" autocomplete="off" id="in31"></td>
+            <td><input placeholder="2 - End" autocomplete="off" id="dis3"></td>
+            <td><div id="ou31"></div></td>
+            <td><div id="ou32"></div></td>
+            <td><div id="ou33"></div></td>
+            <td><div id="ou34"></div></td>
+        </tr>
+        <tr>
+            <td>End</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><input placeholder="End" autocomplete="off" id="in41"></td>
+            <td><input placeholder="End" autocomplete="off" id="in42"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td><div id="total"></div></td>
+            <td><div id="ou52"></div></td>
+            <td><div id="ou53"></div></td>
+            <td><div id="te1"></div></td>
+            <td><div id="te2"></div></td>
+        </tr>
+    </table>
+    <div id="sum"></div>
+
+<button type="submit" onclick="travs()">Submit</button>
+</form>
+
+
+<script>
+    function travs(){
+
+
+        // function to convert degree input to radian from : https://stackoverflow.com/a/9705160
+        function toRadians (angle){
+
+         return angle * (Math.PI / 180);
+}
+
+         let in11 = toRadians(document.getElementById('in11').value);
+         let dis1 =  parseInt(document.getElementById('dis1').value);
+         let in13 = parseInt(document.getElementById('in13').value);
+         let in14 = parseInt(document.getElementById('in14').value);
+
+         let in21 = toRadians(document.getElementById('in21').value);
+         let dis2 = parseInt(document.getElementById('dis2').value);
+
+         let in31 = toRadians(document.getElementById('in31').value);
+         let dis3 = parseInt(document.getElementById('dis3').value);
+
+         let in41 = parseInt(document.getElementById('in41').value);
+         let in42 = parseInt(document.getElementById('in42').value);
+
+
+         //calculating delta y and x
+         let ou11 = dis1 * (Math.sin(in11));
+         let ou12 = dis1 * (Math.cos(in11));
+
+         let ou21 = dis2 * (Math.sin(in21));
+         let ou22 = dis2 * (Math.cos(in21));
+
+         let ou31 = dis3 * (Math.sin(in31));
+         let ou32 = dis3 * (Math.cos(in31));
+
+         //total distances, y and x
+         let total = (dis1 + dis2 + dis3);
+         let ou52 = ou11+ ou21 + ou31;
+         let ou53 = ou12 + ou22 + ou32;
+
+         //end co(claculated) and compare to real co
+
+         let endx = in13 + ou53;
+         let endy = in14 + ou52;
+
+         let dy = in42 - endy;
+         let dx = in41 - endx;
+
+         //get corrections
+
+         let cor1y =(dy / total) * dis1;
+         let cor1x = (dx / total) * dis1;
+
+         let cor2y = (dy / total) * dis2;
+         let cor2x = (dx / total) * dis2;
+
+         let cor3y = (dy / total) * dis3;
+         let cor3x = (dx / total) * dis3;
+
+         //calculate co
+
+         let ou23 = cor1x + ou12 +in13;
+         let ou24 = cor1y + ou11 +in14;
+
+         let ou33 = cor2x + ou22 +ou23;
+         let ou34 = cor2y + ou21+ ou24;
+
+         let te1 = cor3x + ou32 +ou33;
+         let te2 = cor3y + ou31 + ou34;
+
+         //Provide element to table using inner.HTML
+
+         document.getElementById("ou11").innerHTML = ou11;
+         document.getElementById("ou12").innerHTML = ou12;
+         document.getElementById("ou21").innerHTML = ou21;
+         document.getElementById("ou22").innerHTML = ou22;
+         document.getElementById("ou31").innerHTML = ou31;
+         document.getElementById("ou32").innerHTML = ou32;
+         document.getElementById("ou52").innerHTML = ou52;
+         document.getElementById("ou53").innerHTML = ou53;
+         document.getElementById("ou23").innerHTML = ou23;
+         document.getElementById("ou24").innerHTML = ou24;
+         document.getElementById("ou33").innerHTML = ou33;
+         document.getElementById("ou34").innerHTML = ou34;
+         document.getElementById("total").innerHTML = total;
+
+    }
+
+
+</script>
+
+
+<div class="back">
+    <a href="{{ url_for('sheet')}}">
+    <button >Return</button>
+    </a>
+    </div>
+
+{% endblock %}

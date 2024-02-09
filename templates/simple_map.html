@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+
+<div class="text-c">
+    <h3>Powerd by Folium</h3>
+    <p>You can: visualize a set of coordinates and create cluster points maps or you can use a draw plugin from Folium which allows the user to download results afterwards. </p>
+
+</div>
+
+
+<div class="card-cont">
+    <div class="card">
+    <div class="card-content">
+        <h3>Points map</h3>
+        <p>Insert as many location points in the form of (Easting, Northing) as you want then visualize them on a map</p>
+        <a class="btn1" href="{{ url_for('maps')}}">Learn more</a>
+    </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <h3>Point map with cluster.</h3>
+            <p> On the map, a cluster is displayed as a mini-donut chart with the number of points displayed in the center. </p>
+            <a class="btn1" href="{{ url_for('cluster')}}">Learn more</a>
+        </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Draw plugin</h3>
+                <p> draw polyline, polygon, marker, and more, you can also export your work if you want.</p>
+                <a class="btn1" href="{{ url_for('draw')}}">Learn more</a>
+            </div>
+            </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Levelling sheet:</h3>
+    <p>This table represents a leveling sheet for the case of 2 points with one turning point, the user must input:  B.S and elevation of point A, B.S and F.S for the turning point, and F.S for point B. Then press submit</p>
+</div>
+
+<!-- this website has been used to create table elements https://tableconvert.com/html-to-html -->
+<form class="level" onsubmit="return false;">
+<table>
+    <tr>
+        <td>Points</td>
+        <td>BS</td>
+        <td>FS</td>
+        <td>Elevation(m)</td>
+        <td>Notes</td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td><input placeholder="Required" autocomplete="off" id="in12"></td>
+        <td></td>
+        <td><input placeholder="Required" autocomplete="off" id="in11"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TP (C)</td>
+        <td><input placeholder="Required" autocomplete="off" id="in21"></td>
+        <td><input placeholder="Required" autocomplete="off" id="in13"></td>
+        <td><div id="ou1"></div></td>
+        <td><div id="ou11"></div></td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td></td>
+        <td><input placeholder="Required" autocomplete="off" id="in22"></td>
+        <td><div id="ou2"></div></td>
+        <td><div id="ou22"></div></td>
+    </tr>
+    <tr>
+        <td>SUM</td>
+        <td><div id="ou3"></div></td>
+        <td><div id="ou31"></div></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Difference in elevation </td>
+        <td><div id="ou32"></div></td>
+        <td></td>
+        <td></td>
+        <td><div id="rf"></div></td>
+    </tr>
+</table>
+<button type="submit" onclick="level()">Submit</button>
+</form>
+
+
+<script>
+    function level(){
+
+        let in11 = document.getElementById('in11').value;
+        let in12 = document.getElementById('in12').value;
+        let in13 = document.getElementById('in13').value;
+        let in21 = document.getElementById('in21').value;
+        let in22 = document.getElementById('in22').value;
+
+        let ou11 = in11 + in12;
+        let ou1 = ou11 - in13;
+        let ou22 = ou1 + in21;
+        let ou2 = ou22 - in22;
+        let ou3 = in21 + in12;
+        let ou31 = in13 + in22;
+        let ou32 = ou3 - ou31;
+        let Hi1 = "HI: " + ou11;
+        let Hi2 = "HI: " + ou22;
+
+        document.getElementById("ou11").innerHTML =  Hi1;
+        document.getElementById("ou1").innerHTML = ou1;
+        document.getElementById("ou22").innerHTML = Hi2;
+        document.getElementById("ou2").innerHTML = ou2;
+        document.getElementById("ou3").innerHTML = ou3;
+        document.getElementById("ou31").innerHTML = ou31;
+        document.getElementById("ou32").innerHTML = ou32;
+
+        if(ou32 > 0){
+            document.getElementById("rf").innerHTML = "Point B above point A (rise)";
+
+        }
+        if(ou32 < 0){
+            document.getElementById("rf").innerHTML = "Point A above point B (fall)";
+
+        }
+
+    }
+
+</script>
+
+
+<div class="back">
+    <a href="{{ url_for('sheet')}}">
+    <button >Return</button>
+    </a>
+    </div>
+
+{% endblock %}

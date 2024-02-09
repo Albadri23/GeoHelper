@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Marker clusters map:</h3>
+    <p>To create a marker cluster map please upload a .csv file that includes the following tags [latitude, longitude] in (lowercase letters) for each point</p>
+    <form action="/cluster" method="post" enctype="multipart/form-data">
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+</div>
+<div class="back">
+  <a href="{{ url_for('mapmain')}}">
+  <button >Return</button>
+  </a>
+  </div>
+
+
+{% endblock %}

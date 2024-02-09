@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="text-d">
+    <h3>Your result:</h3>
+    <p>&nbsp;coordinate system gcs:<br>&nbsp;Latitude: {{lat}}<br>&nbsp;Longitude: {{lon}}<br><br>&nbsp;cartesian coordinates:<br>&nbsp;X: {{x}}<br>&nbsp;Y: {{y}}<br>&nbsp;Z: {{z}}</p>
+    <div class="back">
+            <a href="{{ url_for('trs')}}">
+            <button >Return</button>
+            </a>
+            </div>
+            </div>
+            <div class="fol">
+                <h3>Powered by <a href="https://github.com/GeoscienceAustralia/GeodePy">GeodePy</a></h3>
+            </div>
+
+
+{% endblock %}

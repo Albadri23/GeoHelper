@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+
+<div class="text-c">
+    <h3> what is Surveying</h3>
+<p>Surveying is the process of analyzing and recording the characteristics of a land area span to help design a plan or map for construction.</p>
+</div>
+
+
+<div class="card-cont">
+    <div class="card">
+    <div class="card-content">
+        <h3>Travers sheet</h3>
+        <p> series of connected lines whose lengths and directions are to be measured, this process  is known as traversing</p>
+        <a class="btn1" href="{{ url_for('trav')}}">Learn more</a>
+    </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <h3>Leveling sheet</h3>
+            <p> leveling is a measurement of the elevation difference between 2 points, leveling is a basic operation in topographical surveying </p>
+            <a class="btn1" href="{{ url_for('level')}}">Learn more</a>
+        </div>
+        </div>
+
+</div>
+
+
+
+
+{% endblock %}
