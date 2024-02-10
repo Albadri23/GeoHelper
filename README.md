@@ -3,6 +3,7 @@ Flask web application submitted as final project for CS50X2023 online course, Ge
 
 ## Link to Website
 https://geohelper.onrender.com
+<br></br>
 Please allow up to 50s to get into the website.
 
 ## Description
