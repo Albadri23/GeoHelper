@@ -3,6 +3,7 @@ Flask web application submitted as final project for CS50X2023 online course, Ge
 
 ## Link to Website
 https://geohelper.onrender.com
+Please allow up to 50s to get into the website.
 
 ## Description
 Here GeoHelper will be explain in more details, GeoHelper has 3 main sections: coordinates, map and surveying.
